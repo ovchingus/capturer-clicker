@@ -1,0 +1,33 @@
+{
+  "name": "capturer-clicker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "makeAssets": "NODE_ENV=test babel-node ./tests/_makeAssets.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ovchingus/capturer-clicker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ovchingus/capturer-clicker/issues"
+  },
+  "homepage": "https://github.com/ovchingus/capturer-clicker#readme",
+  "dependencies": {
+    "config": "^3.3.8",
+    "screenshot-desktop": "^1.12.7",
+    "sharp": "^0.31.2",
+    "tesseract.js": "^4.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.5",
+    "@babel/node": "^7.20.5",
+    "@babel/preset-env": "^7.20.2",
+    "jest": "^29.3.1",
+    "jest-screenshot": "^0.3.5"
+  }
+}
