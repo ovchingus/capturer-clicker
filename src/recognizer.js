@@ -1,3 +1,4 @@
+import config from "config";
 import { createWorker } from "tesseract.js";
 
 export class Recognizer {
@@ -6,12 +7,15 @@ export class Recognizer {
   }
 
   async init() {
-    this.worker = await createWorker({
-      logger: (m) => console.log(m),
-    });
+    this.worker = await createWorker();
 
     await this.worker.loadLanguage("eng");
     await this.worker.initialize("eng");
+
+    const characters = config.get("char_whitelist");
+    await this.worker.setParameters({
+      tessedit_char_whitelist: characters,
+    });
   }
 
   async recognize(imageBuffer) {
@@ -19,7 +23,7 @@ export class Recognizer {
       data: { text },
     } = await this.worker.recognize(imageBuffer);
 
-    return text;
+    return String(text).trim();
   }
 
   async terminate() {

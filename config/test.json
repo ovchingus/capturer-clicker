@@ -4,9 +4,11 @@
     "height": 2240
   },
   "region": {
-    "left": 2138,
-    "top": 1022,
-    "width": 120,
-    "height": 120
-  }
+    "left": 3478,
+    "top": 1860,
+    "width": 80,
+    "height": 70
+  },
+  "char_whitelist": "S1234567890",
+  "poll_interval": 2000
 }
